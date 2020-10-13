@@ -19,11 +19,16 @@ export function of<T>(
   const weakResults = new WeakMap<Request, T>();
   const getName =
     typeof displayName === "string" ? () => displayName : displayName;
+
+  // Express detects the arity of the function to see whether it is a request
+  // handler or an error handler, so we mislead Express by making the extra
+  // arguments about name overriding "rest" (rest arguments don't count in the
+  // function `length` property: see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length)
   const use: RequestHandler = (
     req,
     res,
     next,
-    maybeGetOverridenName?: () => string
+    ...[maybeGetOverridenName]: [maybeGetOverridenName?: () => string]
   ) => {
     handler(
       req,

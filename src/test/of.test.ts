@@ -39,4 +39,8 @@ describe("of", () => {
   test("display name", () => {
     expect(middleware.displayName).toBe("fooMiddleware");
   });
+
+  test("arity", () => {
+    expect(middleware.length).toBe(3);
+  });
 });
