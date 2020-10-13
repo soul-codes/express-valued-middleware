@@ -1,3 +1,10 @@
+## [0.4.2](https://gitlab.com/soul-codes/express-valued-middleware/compare/0.4.1...0.4.2) (2020-10-13)
+
+
+### Bug Fixes
+
+* 🐛 fix length property of resulting middleware ([a5ea293](https://gitlab.com/soul-codes/express-valued-middleware/commit/a5ea293c84dbc0b6bb7fe545378befb9d7528048))
+
 ## [0.4.1](https://gitlab.com/soul-codes/express-valued-middleware/compare/0.4.0...0.4.1) (2020-10-13)
 
 
