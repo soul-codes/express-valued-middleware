@@ -74,7 +74,7 @@ export function map<A, B>(
 
 export type MapError =
   | number
-  | readonly [status: number, output: number]
+  | readonly [status: number, output: any]
   | ((res: Response) => void)
   | readonly [handleError: (res: Response) => void, nextError: unknown];
 
