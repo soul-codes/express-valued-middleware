@@ -1,0 +1,55 @@
+import { Request, RequestHandler } from "express";
+
+import { RequestHandlerWithName } from "./@types/RequestHandlerWithName";
+import { ValuedMiddleware } from "./@types/ValueYieldingMiddleware";
+
+/**
+ * Lifts a "dirty" request-decorating middleware into a value-yielding
+ * middleware by providing the extractor function that should extract the
+ * value from the request object upon successful handling.
+ * @param handler The "dirty" middleware
+ * @param extractor Called only on a non-error `next()` of the `handler`,
+ *   should return the value to save for querying later.
+ */
+export function of<T>(
+  handler: RequestHandlerWithName,
+  extractor: (req: Request) => T,
+  displayName: string | (() => string) = "(unnamed middleware)"
+): ValuedMiddleware<T> {
+  const weakResults = new WeakMap<Request, T>();
+  const getName =
+    typeof displayName === "string" ? () => displayName : displayName;
+  const use: RequestHandler = (
+    req,
+    res,
+    next,
+    maybeGetOverridenName?: () => string
+  ) => {
+    handler(
+      req,
+      res,
+      (err: unknown) => {
+        if (typeof err === "undefined") {
+          weakResults.set(req, extractor(req));
+        }
+        next(err);
+      },
+      () => (maybeGetOverridenName || getName)()
+    );
+  };
+
+  const get = (req: Request): T => {
+    if (!weakResults.has(req)) {
+      throw Error(
+        `Middleware ${displayName} did not leave the value but one was required.`
+      );
+    }
+    return weakResults.get(req)!;
+  };
+  return Object.assign(use, {
+    get,
+    get displayName() {
+      return getName();
+    },
+  });
+}
