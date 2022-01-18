@@ -23,6 +23,7 @@
     "release": "npm run prepare && release-it",
     "tidy": "./bin/tidy.sh"
   },
+  "type": "module",
   "main": "lib",
   "types": "lib",
   "devDependencies": {
