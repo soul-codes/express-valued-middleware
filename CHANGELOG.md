@@ -1,3 +1,5 @@
+## [0.4.3](https://gitlab.com/soul-codes/express-valued-middleware/compare/0.4.2...0.4.3) (2022-01-18)
+
 ## [0.4.2](https://gitlab.com/soul-codes/express-valued-middleware/compare/0.4.1...0.4.2) (2020-10-13)
 
 
