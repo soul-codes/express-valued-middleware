@@ -1,9 +1,12 @@
-const path = require("path");
-module.exports = {
+import { dirname, resolve } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+export default {
   rootDir: __dirname,
   globals: {
     "ts-jest": {
-      tsConfig: path.resolve(__dirname, "src/test", "tsconfig.json"),
+      tsConfig: resolve(__dirname, "src/test", "tsconfig.json"),
     },
   },
   preset: "ts-jest",

@@ -8,7 +8,17 @@
     "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
-    "types": ["node"]
+    "types": ["node"],
+    "plugins": [
+      {
+        "name": "ts-transform-paths",
+        "transform": "@zerollup/ts-transform-paths"
+      },
+      {
+        "transform": "@soul-codes-dev/ts-transform-static-resolve-path/output/index.js",
+        "after": true
+      }
+    ]
   },
   "include": ["src/lib"]
 }
