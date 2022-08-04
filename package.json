@@ -1,6 +1,6 @@
 {
   "name": "express-valued-middleware",
-  "version": "0.4.4-rc.0",
+  "version": "0.5.0",
   "description": "Composable value-yielding middleware creator and combinators for Express.",
   "keywords": [
     "middleware",
