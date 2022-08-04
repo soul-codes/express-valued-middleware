@@ -67,5 +67,6 @@
       "parser": "typescript"
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "license": "MIT"
 }
