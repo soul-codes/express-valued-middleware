@@ -1,3 +1,15 @@
+# [0.6.0](https://gitlab.com/soul-codes/express-valued-middleware/compare/0.5.0...0.6.0) (2022-09-07)
+
+
+### Bug Fixes
+
+* 🐛 do not synthesize/throw error on left branch map ([3a06bb9](https://gitlab.com/soul-codes/express-valued-middleware/commit/3a06bb998e411ffba43b5718b6dbd46a48b15aa0))
+
+
+### BREAKING CHANGES
+
+* 🧨 Map's left value `[response, nextError]` is no longer supported.
+
 # [0.5.0](https://gitlab.com/soul-codes/express-valued-middleware/compare/0.4.4-rc.0...0.5.0) (2022-08-04)
 
 ## [0.4.4-rc.0](https://gitlab.com/soul-codes/express-valued-middleware/compare/0.4.3...0.4.4-rc.0) (2022-06-22)
