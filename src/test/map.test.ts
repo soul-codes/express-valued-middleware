@@ -71,8 +71,7 @@ describe("map", () => {
     middleware(req, res, next);
     expect(res.status).toHaveBeenCalledTimes(1);
     expect(res.status).toHaveBeenLastCalledWith(404);
-    expect(next).toHaveBeenCalledTimes(1);
-    expect(next.mock.calls[0][0]).not.toBeUndefined();
+    expect(next).not.toHaveBeenCalled();
     expect(() => middleware.get(req)).toThrowError(/fooMiddleware/);
   });
 
@@ -81,27 +80,14 @@ describe("map", () => {
     const res = mockResponse();
     const next = mockNext();
 
-    leftValue = jest.fn();
+    leftValue = jest.fn((res, next) => {
+      res.status(400);
+    });
     middleware(req, res, next);
     expect(leftValue).toHaveBeenCalledTimes(1);
-    expect(leftValue).toHaveBeenLastCalledWith(res);
-    expect(next).toHaveBeenCalledTimes(1);
-    expect(next.mock.calls[0][0]).not.toBeUndefined();
-    expect(() => middleware.get(req)).toThrowError(/fooMiddleware/);
-  });
-
-  test("posterior failure (manual reject with exact error)", () => {
-    const req = mockRequest();
-    const res = mockResponse();
-    const next = mockNext();
-
-    const nextError = Error("custom next error");
-    leftValue = [jest.fn(), nextError];
-    middleware(req, res, next);
-    expect(leftValue[0]).toHaveBeenCalledTimes(1);
-    expect(leftValue[0]).toHaveBeenLastCalledWith(res);
-    expect(next).toHaveBeenCalledTimes(1);
-    expect(next.mock.calls[0][0]).toBe(nextError);
+    expect(res.status).toHaveBeenCalledTimes(1);
+    expect(res.status).toHaveBeenLastCalledWith(400);
+    expect(next).not.toHaveBeenCalled();
     expect(() => middleware.get(req)).toThrowError(/fooMiddleware/);
   });
 

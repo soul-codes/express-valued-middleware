@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { Either } from "fp-ts/lib/Either";
 
 import { RequestHandlerWithName } from "./@types/RequestHandlerWithName";
@@ -39,32 +39,12 @@ export function map<A, B>(
         const error = either.left;
         if (typeof error === "number") {
           res.sendStatus(error);
-          return void next(
-            new Error(
-              `Middleware ${getName()}'s value could not be transformed. A status code ${error} was returned.`
-            )
-          );
+        } else if (typeof error === "function") {
+          error(res, next);
+        } else {
+          const [statusCode, payload] = error;
+          res.status(statusCode).send(payload);
         }
-        if (typeof error === "function") {
-          error(res);
-          return void next(
-            new Error(
-              `Middleware ${getName()}'s value could not be transformed.`
-            )
-          );
-        }
-        if (typeof error[0] === "function") {
-          const [handleError, nextError] = error;
-          handleError(res);
-          return void next(nextError);
-        }
-        const [statusCode, payload] = error;
-        res.status(statusCode).send(payload);
-        return void next(
-          new Error(
-            `Middleware ${getName()}'s value could not be transformed. A status code ${statusCode} was returned.`
-          )
-        );
       });
     };
 
@@ -75,8 +55,7 @@ export function map<A, B>(
 export type MapError =
   | number
   | readonly [status: number, output: any]
-  | ((res: Response) => void)
-  | readonly [handleError: (res: Response) => void, nextError: unknown];
+  | ((res: Response, next: NextFunction) => void);
 
 export type MapCombinator<A, B> = (
   fa: ValuedMiddleware<A>
