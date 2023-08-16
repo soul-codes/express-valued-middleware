@@ -1,0 +1,38 @@
+name: CI Tests
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+-?*"
+
+  pull_request:
+    branches:
+      - main
+      - "rc-**"
+
+  workflow_dispatch:
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: yarn
+
+  unit-test:
+    name: Unit Testing
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: yarn && yarn test
+
+  typing-test:
+    name: Type Testing
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: yarn && yarn test:typing
