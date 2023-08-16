@@ -1,5 +1,5 @@
-import { ValuedMiddleware } from "./@types/ValueYieldingMiddleware.js";
-import { of } from "./of.js";
+import { ValuedMiddleware } from "./@types/ValueYieldingMiddleware";
+import { of } from "./of";
 
 export type RenameCombinator = <T>(
   m: ValuedMiddleware<T>

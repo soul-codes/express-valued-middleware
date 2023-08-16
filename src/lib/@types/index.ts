@@ -1,1 +1,1 @@
-export * from "./ValueYieldingMiddleware.js";
+export * from "./ValueYieldingMiddleware";

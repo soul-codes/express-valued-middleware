@@ -26,12 +26,6 @@
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./lib/index.js",
-      "types": "./lib/index.d.ts"
-    }
-  },
   "devDependencies": {
     "@release-it/conventional-changelog": "^1.1.0",
     "@soul-codes-dev/ts-transform-static-resolve-path": "^2.0.0-0",
