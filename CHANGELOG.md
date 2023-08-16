@@ -1,3 +1,11 @@
+## [0.6.1](https://github.com/soul-codes/express-valued-middleware/compare/0.6.0...0.6.1) (2023-08-16)
+
+
+### Bug Fixes
+
+* 🐛 fix typings test ([19a53dc](https://github.com/soul-codes/express-valued-middleware/commit/19a53dc39086901bdfcc65e1c09250b4d22ceeb7))
+* 🐛 generate native-esm friendly outputs ([e7bedff](https://github.com/soul-codes/express-valued-middleware/commit/e7bedffad792d505f48e2582a167469e5c603164))
+
 # [0.6.0](https://gitlab.com/soul-codes/express-valued-middleware/compare/0.5.0...0.6.0) (2022-09-07)
 
 
