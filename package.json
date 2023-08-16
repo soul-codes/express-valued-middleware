@@ -26,6 +26,12 @@
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib/**",
+    "src/lib/**",
+    "README.md",
+    "LICENSE"
+  ],
   "devDependencies": {
     "@release-it/conventional-changelog": "^1.1.0",
     "@soul-codes-dev/ts-transform-static-resolve-path": "^2.0.0",
@@ -66,9 +72,6 @@
       "style": "module",
       "parser": "typescript"
     }
-  },
-  "dependencies": {
-    "ts-patch": "^3.0.2"
   },
   "license": "MIT"
 }
