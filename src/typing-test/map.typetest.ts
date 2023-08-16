@@ -9,9 +9,7 @@ declare const req: Request;
 
 const middleware = pipe(
   useNumber,
-  map((val) =>
-    val === 2 ? right(10) : left([(res) => res.send(200), "boo!"])
-  ),
+  map((val) => (val === 2 ? right(10) : left((res) => void res.send(200)))),
   map((val) => right({ importantValue: val }))
 );
 
