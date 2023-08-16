@@ -1,3 +1,10 @@
+## [0.6.3](https://github.com/soul-codes/express-valued-middleware/compare/0.6.2...0.6.3) (2023-08-16)
+
+
+### Bug Fixes
+
+* 🐛 remove ts-patch from dependencies ([347de8c](https://github.com/soul-codes/express-valued-middleware/commit/347de8cbd3ac640eeb43a7a684482046f5934f58))
+
 ## [0.6.2](https://github.com/soul-codes/express-valued-middleware/compare/0.6.1...0.6.2) (2023-08-16)
 
 
