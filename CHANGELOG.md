@@ -1,3 +1,5 @@
+## [0.6.1-alpha.2](https://github.com/soul-codes/express-valued-middleware/compare/0.6.1-alpha.1...0.6.1-alpha.2) (2023-08-16)
+
 ## [0.6.1-alpha.1](https://github.com/soul-codes/express-valued-middleware/compare/0.6.0...0.6.1-alpha.1) (2023-08-16)
 
 
