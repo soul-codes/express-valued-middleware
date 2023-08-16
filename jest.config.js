@@ -14,4 +14,5 @@ export default {
   moduleNameMapper: {
     "^@lib": "<rootDir>/src/lib",
   },
+  resolver: "./jest.resolver.cjs",
 };

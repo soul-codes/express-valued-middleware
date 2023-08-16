@@ -1,9 +1,9 @@
 import { NextFunction, Request, Response } from "express";
-import { Either } from "fp-ts/lib/Either";
+import { Either } from "fp-ts/lib/Either.js";
 
-import { RequestHandlerWithName } from "./@types/RequestHandlerWithName";
-import { ValuedMiddleware } from "./@types/ValueYieldingMiddleware";
-import { of } from "./of";
+import { RequestHandlerWithName } from "./@types/RequestHandlerWithName.js";
+import { ValuedMiddleware } from "./@types/ValueYieldingMiddleware.js";
+import { of } from "./of.js";
 
 /**
  * Creates a value-yielding middleware combinator that maps the result value of

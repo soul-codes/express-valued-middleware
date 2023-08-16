@@ -1,7 +1,7 @@
 import { Request, RequestHandler } from "express";
 
-import { ValuedMiddleware } from "./@types/ValueYieldingMiddleware";
-import { of } from "./of";
+import { ValuedMiddleware } from "./@types/ValueYieldingMiddleware.js";
+import { of } from "./of.js";
 
 interface MiddlewareAggregation<T extends any[]> {
   /**

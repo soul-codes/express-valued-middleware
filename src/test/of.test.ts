@@ -1,7 +1,7 @@
 import { of } from "@lib";
 import { RequestHandler } from "express";
 
-import { mockNext, mockRequest, mockResponse } from "./utils";
+import { mockNext, mockRequest, mockResponse } from "./utils/index.js";
 
 describe("of", () => {
   let isSuccess = true;
