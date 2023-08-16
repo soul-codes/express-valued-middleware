@@ -11,11 +11,7 @@
     "types": ["node"],
     "plugins": [
       {
-        "name": "ts-transform-paths",
-        "transform": "@zerollup/ts-transform-paths"
-      },
-      {
-        "transform": "@soul-codes-dev/ts-transform-static-resolve-path/output/index.js",
+        "transform": "@soul-codes-dev/ts-transform-static-resolve-path",
         "after": true
       }
     ]
