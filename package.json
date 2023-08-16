@@ -10,7 +10,7 @@
     "expressjs"
   ],
   "repository": {
-    "url": "https://gitlab.com/soul-codes/express-valued-middleware"
+    "url": "https://github.com/soul-codes/express-valued-middleware"
   },
   "scripts": {
     "clean": "rm -rf lib",
