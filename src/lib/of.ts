@@ -1,7 +1,7 @@
 import { Request, RequestHandler } from "express";
 
-import { RequestHandlerWithName } from "./@types/RequestHandlerWithName";
-import { ValuedMiddleware } from "./@types/ValueYieldingMiddleware";
+import { RequestHandlerWithName } from "./@types/RequestHandlerWithName.js";
+import { ValuedMiddleware } from "./@types/ValueYieldingMiddleware.js";
 
 /**
  * Lifts a "dirty" request-decorating middleware into a value-yielding

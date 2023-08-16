@@ -1,7 +1,7 @@
 import { of, rename } from "@lib";
-import { pipe } from "fp-ts/lib/function";
+import { pipe } from "fp-ts/lib/function.js";
 
-import { mockNext, mockRequest, mockResponse } from "./utils";
+import { mockNext, mockRequest, mockResponse } from "./utils/index.js";
 
 describe("rename", () => {
   const testName = jest.fn((name) => {

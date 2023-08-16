@@ -1,9 +1,9 @@
 import { MapError, map, of } from "@lib";
 import { RequestHandler } from "express";
-import { left, right } from "fp-ts/lib/Either";
-import { pipe } from "fp-ts/lib/function";
+import { left, right } from "fp-ts/lib/Either.js";
+import { pipe } from "fp-ts/lib/function.js";
 
-import { mockNext, mockRequest, mockResponse } from "./utils";
+import { mockNext, mockRequest, mockResponse } from "./utils/index.js";
 
 describe("map", () => {
   let isProtoSuccess = true;

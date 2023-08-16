@@ -1,20 +1,14 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "ES2015",
-    "moduleResolution": "node",
+    "module": "ES2022",
+    "moduleResolution": "NodeNext",
     "strict": true,
     "outDir": "lib",
     "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
-    "types": ["node"],
-    "plugins": [
-      {
-        "transform": "@soul-codes-dev/ts-transform-static-resolve-path",
-        "after": true
-      }
-    ]
+    "types": ["node"]
   },
   "include": ["src/lib"]
 }

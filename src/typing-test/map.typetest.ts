@@ -1,8 +1,8 @@
 import { ValuedMiddleware, map } from "@lib";
-import { ExactType, expectType } from "@soul-codes-dev/typetools/test";
+import { ExactType, expectType } from "@soul-codes-dev/typetools/test.js";
 import { Request } from "express";
-import { left, right } from "fp-ts/lib/Either";
-import { pipe } from "fp-ts/lib/function";
+import { left, right } from "fp-ts/lib/Either.js";
+import { pipe } from "fp-ts/lib/function.js";
 
 declare const useNumber: ValuedMiddleware<number>;
 declare const req: Request;

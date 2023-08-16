@@ -1,6 +1,6 @@
 import { aggregate, of } from "@lib";
 
-import { mockNext, mockRequest, mockResponse } from "./utils";
+import { mockNext, mockRequest, mockResponse } from "./utils/index.js";
 
 describe("aggregate", () => {
   let isFooSuccess = true;
